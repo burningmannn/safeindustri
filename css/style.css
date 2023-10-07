@@ -1,0 +1,530 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+a { 
+    outline: none;
+    text-decoration: none;
+    color: #000;
+    cursor: pointer;
+}
+
+body {
+    background: url(../img/html_table.png) center / cover;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+table {
+    width: 100%;
+}
+
+thead th {
+    position: sticky;
+    top: 0;
+    background-color: #f3f3f3f0;
+    z-index: 50;
+}
+
+main.table {
+    width: 82vw;
+    height: 90vh;
+    background-color: #fff5;
+    backdrop-filter: blur(40px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    box-shadow: 0 .4rem .8rem #0005;
+    border-radius: .8rem;
+    overflow: hidden;
+}
+
+.table_header {
+    width: 100%;
+    height: 10%;
+    background-color: #fff5;
+    padding: .8rem 1rem;
+}
+
+.table_body {
+    width: 95%;
+    max-height: calc(88% - 1.6rem);
+    background-color: #fffb;
+    margin: 2% auto ;
+    border-radius: 0.6rem;
+    overflow: auto;
+}
+
+.table_body::-webkit-scrollbar,
+.hero_box::-webkit-scrollbar{
+    width: 0.5rem;
+    height: 0.5rem
+}
+
+.table_body::-webkit-scrollbar-thumb,
+.hero_box::-webkit-scrollbar-thumb{
+    border-radius: .5rem;
+    background-color: #0004;
+    visibility: hidden;
+}
+
+.table_body:hover::-webkit-scrollbar-thumb,
+.hero_box:hover::-webkit-scrollbar-thumb{
+    visibility: visible;
+}
+
+table, th, td {
+    border-collapse: collapse;
+    padding: 1rem;
+}
+
+
+tbody tr:nth-child(even) {
+    background-color: #0000000b;
+}
+
+
+tbody tr td {
+    text-align: center;
+}
+
+tbody tr:hover {
+    background-color: #fff6;
+}
+
+.status {
+    padding: 0.4rem 0.5rem;
+    border-radius: 2rem;
+    text-align: center;
+}
+
+.status.link {
+    display: flex;
+    gap: 0.5rem;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.status.add {
+    background-color: #d5daeb;
+    color: black;
+}
+
+.status.add:hover {
+    box-shadow: 0px 3px 10px #464646;
+    transition: all .5s linear;
+}
+
+.status.good {
+    background-color: #6fcaea;
+    color: black;
+}
+
+.status.good:hover {
+    box-shadow: 0px 3px 10px #464646;
+    transition: all .5s linear;
+}
+
+.status.bad {
+    background-color: #ea6f6f;
+    color: black;
+}
+
+.status.bad:hover {
+    box-shadow: 0px 3px 10px #464646;
+    transition: all .5s linear;
+}
+
+.status.equipment {
+    background-color: #6fea6f;
+    color: black;
+}
+
+.status.decomissioned {
+    background-color: gray;
+    color: black;
+}
+
+.status.warehouse {
+    background-color: #ebc474;
+    color: black;
+}
+
+@media (max-width: 1000px){
+    td:not(:first-of-type) {
+        min-width: 12.1rem;
+    }
+}
+
+header {
+    box-shadow: 0px 3px 10px #464646;
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    margin: 0rem 2rem;
+    height: 40px;
+    align-items: center;
+}
+
+.logo a{
+    display: block;
+    height: 40px;
+    width: 40px;
+    background: url(../img/logo.png) center / cover;
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+}
+
+.nav-list ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.nav-item {
+    margin: 0 15px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: black;
+}
+
+
+.mobile-menu-icon .icon  {
+    display: none;
+    width: 30px;
+    height: 30px;
+}
+
+.mobile-menu-icon a{
+    text-decoration: none;
+    font-size: 1.15rem;
+    color: black;
+    font-weight: 400;
+    display: block;
+}
+
+
+.mobile-menu.icon {
+    display: none;
+}
+
+.mobile-menu {
+    display: none;
+}
+
+@media screen and (max-width: 730px) {
+    .nav-nar {
+        padding: 1.5rem 4rem;
+    }
+
+    .mobile-menu-icon .icon  {
+        display: block;
+    }
+
+    .mobile-menu-icon .exit{
+        display: none;
+    }
+
+    .nav-item {
+        display: none;
+    }
+
+    .login-button {
+        display: none;
+    }
+
+    .mobile-menu-icon {
+        display: block;
+    }
+
+    .mobile-menu-icon button {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+
+    .mobile-menu ul {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        height: 60px;
+        justify-content: space-around;
+    }
+
+    .mobile-menu .nav-item {
+        display: block;
+    }
+
+    .mobile-menu .login-button {
+        display: block;
+    }
+
+    .mobile-menu .login-button button {
+        width: 100%;
+    }
+
+    .open {
+        display: block;
+    }
+}
+
+.wrapper {
+    display: none;
+    position: absolute;
+    max-width: 420px;
+    background: #0000006b;
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(40px);
+    color: #fff;
+    border-radius: 10px;
+    padding: 30px 40px;
+    width: 95%
+}
+
+.wrapper h1 {
+    font-size: 26px;
+    text-align: center;
+}
+
+
+.wrapper-modal a{
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    color: #fff;
+}
+
+
+.wrapper .input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+}
+
+.input-box input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 40px;
+    font-size: 16px;
+    color: #fff;
+    padding: 20px 45px 20px 20px;
+}
+
+.input-box input:hover{
+    transition: all .5s linear;
+    box-shadow: 0px 0px 20px 1px rgb(0 0 0 / 40%);
+}
+
+.input-box input:focus {
+    transition: all .5s linear;
+    box-shadow: 0px 0px 20px 1px rgb(0 0 0 / 40%);
+}
+
+.input-box textarea::placeholder {
+    color: #fff;
+}
+
+.input-box input::placeholder {
+    color: #fff;
+}
+
+.input-box select {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 40px;
+    font-size: 16px;
+    color: #ffffff;
+    padding: 10px 45px 10px 20px;
+}
+
+.input-box select option{
+    color: #ffffff;
+    background: #8a8889;
+    width: 200px;
+    position: absolute;
+  top: 100%;
+  left: 0;
+  border: 1px solid #ccc;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.input-box i {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+}
+
+.input-box textarea {
+    width: 100%;
+    height: 66px;
+    background: transparent;
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 10px;
+    font-size: 16px;
+    color: #ffffff;
+    padding: 10px 10px 10px 20px;
+    resize: none;
+}
+
+.input-box textarea:hover{
+    transition: all .5s linear;
+    box-shadow: 0px 0px 20px 1px rgb(0 0 0 / 40%);
+}
+
+.input-box textarea:focus {
+    transition: all .5s linear;
+    box-shadow: 0px 0px 20px 1px rgb(0 0 0 / 40%);
+}
+
+.input-box textarea::placeholder {
+    color: #fff;
+}
+
+.input-box textarea::-webkit-scrollbar{
+    width: 0.4rem;
+    height: 1rem;
+    cursor: pointer;
+}
+
+.input-box textarea::-webkit-scrollbar-thumb {
+    border-radius: 1rem;
+    background-color: #0004;
+}
+
+.wrapper .btn {
+    width: 100%;
+    height: 45px;
+    background: #fff;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+    margin: 20px 0 15px;
+}
+
+.wrapper .btn:hover {
+    box-shadow: 0px 3px 10px #000000;
+    transition: all .5s linear;
+}
+
+div #message {
+    text-align: center;
+}
+
+.slider_tabs {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+  .slider_tabs input{
+    visibility: hidden;
+    display: none;
+  }
+
+  .labels{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    height: 46px
+  }
+
+  .labels label{
+    width: 15px;
+    height: 15px;
+    background-color: rgb(190, 190, 190);
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    backdrop-filter: blur(40px);
+    transition: all .4s ease-in;
+    padding: 3px 7px;
+  }
+
+  .labels label:hover{ /* При наведении на кнопки*/
+    background: rgb(83, 83, 83);
+  }
+
+  .slider_tabs input:nth-child(1):checked ~ .labels label:nth-child(1),
+  .slider_tabs input:nth-child(2):checked ~ .labels label:nth-child(2),
+  .slider_tabs input:nth-child(3):checked ~ .labels label:nth-child(3){
+    background: rgb(120, 120, 120);
+    width: 40px;
+    height: 15px;
+  }
+
+  .hero_content{
+    display: flex;
+    width: calc(100% * 3);
+    position: relative;
+    transition: all .5s linear;
+  }
+
+  .hero_content .hero_box{
+    height: 75vh;
+    margin: 0px 1%;
+  }
+
+  .hero_content .hero_box:nth-child(1){
+    width: 95%;
+    background-color: #fffa;
+    border-radius: 0.6rem;
+    overflow: auto;
+  }
+
+  .hero_content .hero_box:nth-child(2){
+    width: 95%;
+    background-color: #fffa;
+    border-radius: 0.6rem;
+    overflow: auto;
+  }
+
+  .hero_content .hero_box:nth-child(3){
+    width: 95%;
+    background-color: #fffa;
+    border-radius: 0.6rem;
+    overflow: auto;
+  }
+
+
+  .slider_tabs input:nth-child(1):checked ~ .hero_content{
+    left: 0vw;
+  }
+
+  .slider_tabs input:nth-child(2):checked ~ .hero_content{
+    left: calc(-100%);
+  }
+
+  .slider_tabs input:nth-child(3):checked ~ .hero_content{
+    left: calc(-200%);
+  }
