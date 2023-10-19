@@ -7,7 +7,7 @@
     font-family: sans-serif;
 }
 
-a { 
+a { /* ТУТ ДОБАВИЛ */
     outline: none;
     text-decoration: none;
     color: #000;
@@ -29,6 +29,7 @@ table {
 thead th {
     position: sticky;
     top: 0;
+    /* left: 0; */
     background-color: #f3f3f3f0;
     z-index: 50;
 }
@@ -97,61 +98,64 @@ tbody tr:hover {
     background-color: #fff6;
 }
 
-.status {
+.status { /* ТУТ ДОБАВИЛ */
     padding: 0.4rem 0.5rem;
     border-radius: 2rem;
     text-align: center;
+    /* max-width: 150px; */
+    /* margin: 0 auto; */
+    /* width: 100%;*/
 }
 
-.status.link {
+.status.link { /* ТУТ ДОБАВИЛ */
     display: flex;
     gap: 0.5rem;
     flex-direction: row;
     justify-content: center;
 }
 
-.status.add {
-    background-color: #d5daeb;
+.status.add { /* ТУТ ДОБАВИЛ */
+    background-color: #8c8c8c;
     color: black;
 }
 
-.status.add:hover {
+.status.add:hover { /* ТУТ ДОБАВИЛ */
     box-shadow: 0px 3px 10px #464646;
-    transition: all .5s linear;
+    transition: all .9s linear;
 }
 
-.status.good {
-    background-color: #6fcaea;
-    color: black;
-}
-
-.status.good:hover {
-    box-shadow: 0px 3px 10px #464646;
-    transition: all .5s linear;
-}
-
-.status.bad {
-    background-color: #ea6f6f;
-    color: black;
-}
-
-.status.bad:hover {
-    box-shadow: 0px 3px 10px #464646;
-    transition: all .5s linear;
-}
-
-.status.equipment {
+.status.good { /* ТУТ ДОБАВИЛ */
     background-color: #6fea6f;
     color: black;
 }
 
+.status.good:hover { /* ТУТ ДОБАВИЛ */
+    box-shadow: 0px 3px 10px #464646;
+    transition: all .9s linear;
+}
+
+.status.bad { /* ТУТ ДОБАВИЛ */
+    background-color: #ea6f6f;
+    color: black;
+}
+
+.status.bad:hover { /* ТУТ ДОБАВИЛ */
+    box-shadow: 0px 3px 10px #464646;
+    transition: all .9s linear;
+}
+
+.status.equipment {
+    background-color: #a399d1;
+    color: black;
+}
+
 .status.decomissioned {
-    background-color: gray;
+    background-color: #6bcde3;
     color: black;
 }
 
 .status.warehouse {
-    background-color: #ebc474;
+    background-color: #8d8d8f;
     color: black;
 }
 
@@ -265,10 +269,12 @@ header {
 
     .mobile-menu .nav-item {
         display: block;
+        /*padding-top: 1.2rem;*/
     }
 
     .mobile-menu .login-button {
         display: block;
+        /*padding: 1rem 2rem; */
     }
 
     .mobile-menu .login-button button {
@@ -471,7 +477,7 @@ div #message {
     padding: 3px 7px;
   }
 
-  .labels label:hover{ /* При наведении на кнопки*/
+  .labels label:hover{ /* При наведении на кноки !!!*/
     background: rgb(83, 83, 83);
   }
 
@@ -492,6 +498,9 @@ div #message {
 
   .hero_content .hero_box{
     height: 75vh;
+    /*display: flex;
+    justify-content: center;
+    align-items: center;*/
     margin: 0px 1%;
   }
 

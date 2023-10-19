@@ -18,6 +18,7 @@ function initSorting() {
             var cellValueA = $(a).find('td').eq(columnIndex).text().toUpperCase();
             var cellValueB = $(b).find('td').eq(columnIndex).text().toUpperCase();
       
+            // Check if the values are numeric
             var isNumericA = !isNaN(parseFloat(cellValueA)) && isFinite(cellValueA);
             var isNumericB = !isNaN(parseFloat(cellValueB)) && isFinite(cellValueB);
       
@@ -39,7 +40,7 @@ function initSorting() {
                 return cellValueB.localeCompare(cellValueA);
               }
             } else {
-              return 0;
+              return 0; // No sorting
             }
           });
       
@@ -47,12 +48,14 @@ function initSorting() {
       
           $(this).data('sort-order', sortOrder);
       
+          // Toggle arrow icon based on sort order
           if (sortOrder === 'asc') {
             $(this).find('.sort-arrow').removeClass('fa-sort-down').addClass('fa-sort-up');
           } else if (sortOrder === 'desc') {
             $(this).find('.sort-arrow').removeClass('fa-sort-up').addClass('fa-sort-down');
           }
       
+          // Reset arrow icons in other headers
           $table.find('.sortable').not(this).data('sort-order', 'none').find('.sort-arrow').removeClass('fa-sort-up fa-sort-down').addClass('fa-sort');
       
           lastClickedHeader = this;

@@ -203,7 +203,7 @@ function loadDataForAddModal(nameModal = "", nameTable="", id = -1){
                     $('#statusAdminka').append('<option id="statusOption" value="'+value.id_status+'">'+value.nameStatus+'</option>');
                 });
 
-                document.getElementById('addModalAdminka').style.display = 'block';
+                document.getElementById('addModalAdminka').style.display = 'block'; //МОДАЛЬКА ПОЯВИСЬКА
             } else {
                 console.log(responce.message);
             }
@@ -264,7 +264,7 @@ function loadDataForEditModal(nameModal = "", nameTable="", id = -1){
                 document.getElementById('title').value = data.title;
                 document.getElementById('inventory').value = data.inventory;
                 document.getElementById('idRecord').value = id;
-                document.getElementById('editModalAdminka').style.display = 'block';
+                document.getElementById('editModalAdminka').style.display = 'block'; //МОДАЛЬКА ПОЯВИСЬКА
             } else {
                 console.log(responce.message);
             }
@@ -288,8 +288,8 @@ function loadDataForEditOtdel(nameModal = "", nameTable="", id = -1){
             if (responce.status) {
                 const data = responce.departament[0]["nameOtd"];
                 document.getElementById('otdell').value = data;
-                document.getElementById('editModalOtdel').style.display = 'block';
-                document.getElementById('iddRecord').value = id;
+                document.getElementById('editModalOtdel').style.display = 'block'; //МОДАЛЬКА ПОЯВИСЬКА
+                document.getElementById('iddRecord').value = id; //МОДАЛЬКА ПОЯВИСЬКА
             } else {
                 console.log(responce.message);
             }
@@ -313,8 +313,8 @@ function loadDataForEditCategory(nameModal = "", nameTable="", id = -1){
             if (responce.status) {
                 const data = responce.category[0]["nameCat"];
                 document.getElementById('categoryy').value = data;
-                document.getElementById('editModalCategory').style.display = 'block';
-                document.getElementById('idddRecord').value = id;
+                document.getElementById('editModalCategory').style.display = 'block'; //МОДАЛЬКА ПОЯВИСЬКА
+                document.getElementById('idddRecord').value = id; //МОДАЛЬКА ПОЯВИСЬКА
             } else {
                 console.log(responce.message);
             }

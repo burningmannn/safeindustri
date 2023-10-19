@@ -8,6 +8,8 @@
         $id = $_POST['IdRecord'];
         switch($delNameTable){
             case 'delAdminka':    
+                //$id = $_POST['IdRecord'];
+
                 //Проверка на существования такого ID
                 $sql="SELECT COUNT(*) AS count FROM technic WHERE `technic`.`id` = '$id'";
                 $result = mysqli_query($connect, $sql);
