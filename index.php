@@ -198,7 +198,6 @@
             <button type="submit" class="btn">Удалить</button>
         </form>
     </div>
-
     <script type="module" src="js/confetti.js"></script>
 </body>
 </html>
