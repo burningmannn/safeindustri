@@ -1,7 +1,7 @@
 <?php session_start(); error_reporting(0);?>
 <section class="table_header">
     <nav class="nav-bar">
-        <div class="logo">
+        <div id="logo" class="logo">
             <a></a>
         </div>
         <div class="nav-list">
