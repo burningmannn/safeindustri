@@ -77,10 +77,10 @@ INSERT INTO `departament` (`id_departament`, `nameDepartament`) VALUES
 
 CREATE TABLE `feedback` (
   `id` int NOT NULL,
-  `fio` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `phone` varchar(18) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `message` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `fio` varchar(100) COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `phone` varchar(18) COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `message` varchar(255) COLLATE utf8mb3_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 --
 -- Дамп данных таблицы `feedback`
