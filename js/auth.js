@@ -17,8 +17,8 @@ $(document).ready(function() {
                     get_header();
                     get_all_records();
                 } else {
-                    $('#message').html("Неверное имя пользователя или пароль");
-                    $('#message').css('display', 'block');
+                    $('#loginForm #message').html("Неверное имя пользователя или пароль");
+                    $('#loginForm #message').css('display', 'block');
                     console.log(data.message);
                 }
             },

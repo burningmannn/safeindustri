@@ -1,6 +1,5 @@
 function openModal(nameModal = "", nameTable="", id = -1){
     try {
-        console.log("Открытие формы", nameModal, nameTable, id);
         switch (nameModal) {
             case "feedbackModal":
                 document.getElementById('feedbackModal').style.display = 'block';
@@ -75,7 +74,6 @@ function openModal(nameModal = "", nameTable="", id = -1){
             default:
                 console.log("Форма не найдена!");
     }
-        console.log("Форма успешно открыта");
     } catch(e) {
         console.log("Возникла проблема с формой!!!");
         console.log('Ошибка ' + e.name + ":" + e.message + "\n" + e.stack);
@@ -84,7 +82,6 @@ function openModal(nameModal = "", nameTable="", id = -1){
 
 function closeModal(nameModal = "", nameTable="", id = -1){
     try {
-        console.log("Закрытие формы", nameModal, nameTable, id);
         switch (nameModal) {
             case "feedbackModal":
                 document.getElementById('feedbackModal').style.display = 'none';
@@ -95,8 +92,8 @@ function closeModal(nameModal = "", nameTable="", id = -1){
             case "authModal":
                 document.getElementById('authModal').style.display = 'none';
                 document.getElementById('loginForm').reset()
-                document.getElementById('message').innerHTML = '';
-                document.getElementById('message').style.display = "none";
+                $('#loginForm #message').innerHTML = '';
+                $('#loginForm #message').css('display', 'none');
                 break;
             case "addModal":
                 switch(nameTable){
@@ -166,7 +163,6 @@ function closeModal(nameModal = "", nameTable="", id = -1){
             default:
                 console.log("Форма не найдена!");
     }
-        console.log("Форма успешно закрыта");
     } catch(e) {
         console.log("Возникла проблема с формой!!!");
         console.log('Ошибка ' + e.name + ":" + e.message + "\n" + e.stack);
@@ -203,7 +199,7 @@ function loadDataForAddModal(nameModal = "", nameTable="", id = -1){
                     $('#statusAdminka').append('<option id="statusOption" value="'+value.id_status+'">'+value.nameStatus+'</option>');
                 });
 
-                document.getElementById('addModalAdminka').style.display = 'block'; //МОДАЛЬКА ПОЯВИСЬКА
+                document.getElementById('addModalAdminka').style.display = 'block';
             } else {
                 console.log(responce.message);
             }
@@ -264,7 +260,7 @@ function loadDataForEditModal(nameModal = "", nameTable="", id = -1){
                 document.getElementById('title').value = data.title;
                 document.getElementById('inventory').value = data.inventory;
                 document.getElementById('idRecord').value = id;
-                document.getElementById('editModalAdminka').style.display = 'block'; //МОДАЛЬКА ПОЯВИСЬКА
+                document.getElementById('editModalAdminka').style.display = 'block';
             } else {
                 console.log(responce.message);
             }
@@ -288,8 +284,8 @@ function loadDataForEditOtdel(nameModal = "", nameTable="", id = -1){
             if (responce.status) {
                 const data = responce.departament[0]["nameOtd"];
                 document.getElementById('otdell').value = data;
-                document.getElementById('editModalOtdel').style.display = 'block'; //МОДАЛЬКА ПОЯВИСЬКА
-                document.getElementById('iddRecord').value = id; //МОДАЛЬКА ПОЯВИСЬКА
+                document.getElementById('editModalOtdel').style.display = 'block';
+                document.getElementById('iddRecord').value = id;
             } else {
                 console.log(responce.message);
             }
@@ -313,13 +309,13 @@ function loadDataForEditCategory(nameModal = "", nameTable="", id = -1){
             if (responce.status) {
                 const data = responce.category[0]["nameCat"];
                 document.getElementById('categoryy').value = data;
-                document.getElementById('editModalCategory').style.display = 'block'; //МОДАЛЬКА ПОЯВИСЬКА
-                document.getElementById('idddRecord').value = id; //МОДАЛЬКА ПОЯВИСЬКА
+                document.getElementById('editModalCategory').style.display = 'block';
+                document.getElementById('idddRecord').value = id;
             } else {
                 console.log(responce.message);
             }
         },
-        error: function(){
+        error: function() {
             console.log("Возникла ошибка при выполнении php");
         },
     });
@@ -333,7 +329,7 @@ $(document).ready(function(){
         var formData = new FormData(this); 
         $.ajax({
             type: 'POST',
-            url: 'config/back.php',
+            url: 'config/feedback.php',
             async: true,
             dataType: 'json',
             data: formData,
@@ -343,7 +339,6 @@ $(document).ready(function(){
             success: function(data) {
                 if (data.status) {
                     $('#feedbackForm #message').html(data.message);
-                    //closeModal('feedbackModal')
                 } else {
                     $('#feedbackForm #message').html(data.message);
                     console.log(data.message);
@@ -612,7 +607,7 @@ $(document).ready(function(){
     });
 });
 
-function menuShow(){
+function menuShow() {
 	let menuMobile = document.querySelector('.mobile-menu');
 	if (menuMobile != null){
 		if (menuMobile.classList.contains('open')) {
@@ -624,23 +619,3 @@ function menuShow(){
 		}
 	}
 }
-
-function tableSearch(){
-    var phrase = document.getElementById('search-text');
-    var table = document.getElementById('info-table');
-    var regPhrase = new RegExp(phrase.value, 'i');
-    var flag = false;
-    for (var i = 1; i < table.rows.length; i++) {
-        flag = false;
-        for (var j = table.rows[i].cells.length - 1; j >= 0; j--) {
-            flag = regPhrase.test(table.rows[i].cells[j].innerHTML);
-            if (flag) break;
-        }
-        if (flag) {
-            table.rows[i].style.display = "";
-        } else {
-            table.rows[i].style.display = "none";
-        }
-    }
-}
-

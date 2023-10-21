@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Промэнергобезопасность</title>
+    <title>CLOUD</title>
     <link href="img/favicon.ico" rel="shortcut icon" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -199,5 +199,6 @@
         </form>
     </div>
     <script type="module" src="js/confetti.js"></script>
+    <script src="js/phoneInputMask.js"></script>
 </body>
 </html>

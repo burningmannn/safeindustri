@@ -9,7 +9,7 @@
 ?>
 <thead>
     <tr>
-    <th style="text-align: left;width: 60px;"><a class="status add" onclick="openModal('addModal', 'category')"><i class='bx bx-plus'></i></a></th>
+        <th style="text-align: left;width: 60px;"><a class="status add" onclick="openModal('addModal', 'category')"><i class='bx bx-plus'></i></a></th>
         <th>Категория</th>
         <?php if(isset($_SESSION['user']) && $_SESSION['user']): ?>
         <th>Меню</th>

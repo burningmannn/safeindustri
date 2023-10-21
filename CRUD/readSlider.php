@@ -1,6 +1,5 @@
 <?php
     error_reporting(0);
-    
     session_start();
     if (empty($_SESSION['user'])):
 ?>
@@ -14,10 +13,12 @@
     <input type="radio" name="slider" id="slider1" checked="">
     <input type="radio" name="slider" id="slider2">
     <input type="radio" name="slider" id="slider3">
+    <input type="radio" name="slider" id="slider4">
     <div class="labels">
         <label for="slider1"></label>
         <label for="slider2"></label>
         <label for="slider3"></label>
+        <label for="slider4"></label>
     </div>
     <div class="hero_content">
         <div class="hero_box slider1_bg" id="table-container">
@@ -33,6 +34,11 @@
         <div class="hero_box slider3_bg">
             <table id="info-table" class="tableCategory">
                 <?php include_once 'readDataCategory.php'; ?>
+            </table>
+        </div>
+        <div class="hero_box slider4_bg">
+            <table id="info-table">
+                <?php include_once 'readDataMessage.php'; ?>
             </table>
         </div>
     </div>

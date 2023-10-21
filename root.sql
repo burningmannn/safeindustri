@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Хост: localhost:3306
--- Время создания: Окт 07 2023 г., 13:21
--- Версия сервера: 10.5.20-MariaDB
--- Версия PHP: 7.3.33
+-- Хост: 127.0.0.1:3306
+-- Время создания: Окт 21 2023 г., 14:12
+-- Версия сервера: 8.0.30
+-- Версия PHP: 7.2.34
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- База данных: `id21336994_root`
+-- База данных: `root`
 --
 
 -- --------------------------------------------------------
@@ -28,9 +28,9 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `category` (
-  `id_category` int(11) NOT NULL,
-  `nameCategory` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `id_category` int NOT NULL,
+  `nameCategory` varchar(255) COLLATE utf8mb3_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 --
 -- Дамп данных таблицы `category`
@@ -56,9 +56,9 @@ INSERT INTO `category` (`id_category`, `nameCategory`) VALUES
 --
 
 CREATE TABLE `departament` (
-  `id_departament` int(11) NOT NULL,
-  `nameDepartament` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `id_departament` int NOT NULL,
+  `nameDepartament` varchar(255) COLLATE utf8mb3_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 --
 -- Дамп данных таблицы `departament`
@@ -72,13 +72,35 @@ INSERT INTO `departament` (`id_departament`, `nameDepartament`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Структура таблицы `feedback`
+--
+
+CREATE TABLE `feedback` (
+  `id` int NOT NULL,
+  `fio` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `phone` varchar(18) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `message` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Дамп данных таблицы `feedback`
+--
+
+INSERT INTO `feedback` (`id`, `fio`, `phone`, `message`) VALUES
+(1, 'Потапов Клим Максимович', '+7 (904) 584 46 45', 'Снять оборудование с КСО 5392'),
+(2, 'Павлов Ефим Георгиевич', '+7 (954) 564 56 45', 'Добавить информационно-аналитический отдел'),
+(3, 'Силин Тимур Дамирович', '+7 (564) 496 42 61', 'Проверка от 21.10.2023 пройдена успешно.');
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблицы `status`
 --
 
 CREATE TABLE `status` (
-  `id` int(11) NOT NULL,
+  `id` int NOT NULL,
   `name` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 --
 -- Дамп данных таблицы `status`
@@ -96,13 +118,13 @@ INSERT INTO `status` (`id`, `name`) VALUES
 --
 
 CREATE TABLE `technic` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `departament` int(11) DEFAULT NULL,
-  `category` int(11) DEFAULT NULL,
-  `inventory` int(10) UNSIGNED NOT NULL,
-  `status_technic` int(11) DEFAULT NULL,
+  `id` int UNSIGNED NOT NULL,
+  `departament` int DEFAULT NULL,
+  `category` int DEFAULT NULL,
+  `inventory` int UNSIGNED NOT NULL,
+  `status_technic` int DEFAULT NULL,
   `title` varchar(40) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 --
 -- Дамп данных таблицы `technic`
@@ -154,11 +176,11 @@ INSERT INTO `technic` (`id`, `departament`, `category`, `inventory`, `status_tec
 --
 
 CREATE TABLE `users` (
-  `id` int(10) UNSIGNED NOT NULL,
+  `id` int UNSIGNED NOT NULL,
   `name` varchar(25) NOT NULL,
   `login` varchar(25) NOT NULL,
   `pass` varchar(25) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3;
 
 --
 -- Дамп данных таблицы `users`
@@ -184,6 +206,12 @@ ALTER TABLE `category`
 ALTER TABLE `departament`
   ADD PRIMARY KEY (`id_departament`),
   ADD UNIQUE KEY `nameDepartament` (`nameDepartament`);
+
+--
+-- Индексы таблицы `feedback`
+--
+ALTER TABLE `feedback`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Индексы таблицы `status`
@@ -216,25 +244,31 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `category`
 --
 ALTER TABLE `category`
-  MODIFY `id_category` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
+  MODIFY `id_category` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
 -- AUTO_INCREMENT для таблицы `departament`
 --
 ALTER TABLE `departament`
-  MODIFY `id_departament` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id_departament` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+
+--
+-- AUTO_INCREMENT для таблицы `feedback`
+--
+ALTER TABLE `feedback`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT для таблицы `technic`
 --
 ALTER TABLE `technic`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Ограничения внешнего ключа сохраненных таблиц
