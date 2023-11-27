@@ -21,7 +21,6 @@
         <header id="head">   
         </header>
     </main>
-
     <div class="wrapper wrapper-modal" id="feedbackModal">
         <a onclick="closeModal('feedbackModal')"><i class='bx bx-x-circle bx-md'></i></a>
         <form id="feedbackForm">
@@ -190,7 +189,7 @@
     </div>
 
     <div class="wrapper wrapper-modal" id="deleteModalCategory">
-        <a onclick="closeModal('deleteModal', 'category')"><i class='bx bx-x-circle bx-md'></i></a>
+        <a onclick="closeModal('deleteModal', 'category') class="link-ease-in-out""><i class='bx bx-x-circle bx-md'></i></a>
         <form id="deleteFormCategory">
             <input type="hidden" id="delNameTable" name="delNameTable" value="delCategory" readonly>
             <input type="hidden" id="IdRecordCategory" name="IdRecord" value="" readonly>
@@ -200,5 +199,13 @@
     </div>
     <script type="module" src="js/confetti.js"></script>
     <script src="js/phoneInputMask.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+  var element = document.querySelector('div[style="text-align: right;position: fixed;z-index:9999999;bottom: 0;width: auto;right: 1%;cursor: pointer;line-height: 0;display:block !important;"]');
+  if (element) {
+    element.remove();
+  }
+});
+</script>
 </body>
 </html>

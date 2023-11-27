@@ -7,12 +7,30 @@
     font-family: sans-serif;
 }
 
-a { /* ТУТ ДОБАВИЛ */
+a {
+    display: inline-block;
+    line-height: 1;
     outline: none;
     text-decoration: none;
     color: #000;
     cursor: pointer;
 }
+
+.link-ease-in-out a:after {
+    background-color: yellow; /* Цвет линии при наведении на нее курсора мыши */
+    display: block;
+    content: "";
+    height: 2px; /* Высота линии */
+    width: 0%;
+    -webkit-transition: width .3s ease-in-out;
+    -moz--transition: width .3s ease-in-out;
+    transition: width .3s ease-in-out;
+}
+.link-ease-in-out a:hover:after,
+.link-ease-in-out a:focus:after {
+    width: 100%;
+}
+    
 
 body {
     background: url(../img/html_table.png) center / cover;
@@ -549,3 +567,26 @@ div #message {
   .slider_tabs input:nth-child(4):checked ~ .hero_content{
     left: calc(-300%);
   }
+  
+  .link-ease-in-out a {
+    display: inline-block;
+    color: black; /* Цвет обычной ссылки */
+    line-height: 1;
+    text-decoration: none; /* Убираем подчеркивание */
+    cursor: pointer;
+}
+
+.link-ease-in-out a:after {
+    background-color: yellow; /* Цвет линии при наведении на нее курсора мыши */
+    display: block;
+    content: "";
+    height: 2px; /* Высота линии */
+    width: 0%;
+    -webkit-transition: width .3s ease-in-out;
+    -moz--transition: width .3s ease-in-out;
+    transition: width .3s ease-in-out;
+}
+.link-ease-in-out a:hover:after,
+.link-ease-in-out a:focus:after {
+    width: 100%;
+}

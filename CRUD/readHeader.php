@@ -4,7 +4,7 @@
         <div id="logo" class="logo">
             <a></a>
         </div>
-        <div class="nav-list">
+        <div class="link-ease-in-out nav-list">
             <ul>
             <?php if (empty($_SESSION['user'])): ?>
                 <li class="nav-item"><a onclick="openModal('feedbackModal')">Обратная связь</a></li>
