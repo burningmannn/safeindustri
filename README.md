@@ -30,7 +30,7 @@ This is a site (cloud) for accounting for equipment in an enterprise, it has dif
 
 ## Developers
 
-- [burningmannn](github.com/burningmannn)
+- [github.com/burningmannn](https://github.com/burningmannn)
 
 ## License
 
