@@ -26,7 +26,7 @@ This is a site (cloud) for accounting for equipment in an enterprise, it has dif
 
 ## Distribute
 
-- [Link to online project](safeindustri.000webhostapp.com)
+- [Link to online project](https://safeindustri.000webhostapp.com)
 
 ## Developers
 
