@@ -9,7 +9,7 @@
 
 ## About
 
-This is a site (cloud) for accounting for equipment in an enterprise, it has differentiated access rights, a database consisting of several tables (available in administrator mode), added editing of tables from the database directly on the site, and implemented feedback for inspectors.
+This is a site (cloud) for accounting for equipment in the enterprise, it has access rights differentiation, a database consisting of several tables (available in administrator mode), editing tables from the database directly on the site has been added, feedback has been provided for audit.
 
 ## Projection
 <p align="center">
